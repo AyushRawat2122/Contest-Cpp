@@ -6,12 +6,11 @@ int piviot(vector<int>&arr , int low , int high){
     int piviot = arr[low];
     int h = high;
     int l = low;
-    l++;
     while(l <= h){
-        while(arr[l] < piviot){
+        while(arr[l] <= piviot && l <= high-1){
             l++;
         }
-        while(arr[h] > piviot){
+        while(arr[h] > piviot && h >= low+1){
             h--;
         }
         if(l<=h){swap(arr[l] , arr[h]);}
