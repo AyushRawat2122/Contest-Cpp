@@ -19,20 +19,20 @@ void Mg(vector<int> &arr, int low, int mid, int high)
             r++;
         }
     }
-      while (l <= mid)
-        {
-            temp.push_back(arr[l]);
-            l++;
-        }
-        while (r <= high)
-        {
-            temp.push_back(arr[r]);
-            r++;
-        }
-        for (int i = low; i <= high; i++)
-        {
-            arr[i] = temp[i - low];
-        }
+    while (l <= mid)
+    {
+        temp.push_back(arr[l]);
+        l++;
+    }
+    while (r <= high)
+    {
+        temp.push_back(arr[r]);
+        r++;
+    }
+    for (int i = low; i <= high; i++)
+    {
+        arr[i] = temp[i - low];
+    }
 }
 void MgSt(vector<int> &arr, int low, int high)
 {

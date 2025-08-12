@@ -3,20 +3,16 @@
 using namespace std;
 
 int piviot(vector<int>&arr , int low , int high){
-    int piviot = arr[low];
-    int h = high;
-    int l = low;
-    while(l <= h){
-        while(arr[l] <= piviot && l <= high-1){
-            l++;
+    int piviot = arr[high];
+    int i = low - 1;
+    for(int j = low ; j <= high-1 ; j++){
+        if(arr[j] < piviot ){
+            i++;
+            swap(arr[i],arr[j]);
         }
-        while(arr[h] > piviot && h >= low+1){
-            h--;
-        }
-        if(l<=h){swap(arr[l] , arr[h]);}
     }
-    swap(arr[low], arr[h]);
-    return h;
+    swap(arr[i+1], arr[high]);
+    return i+1;
 }
 
 void quickSort(vector<int>&arr,int low, int high){
